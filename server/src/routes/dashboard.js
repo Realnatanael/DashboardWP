@@ -11,7 +11,7 @@ router.get('/', (_req, res) => {
   }
   res.json(data);
 });
-
+// Rota para forçar a sincronização dos dados do dashboard. o metodo POST é usado porque estamos "criando" uma nova sincronização.
 router.post('/sync', async (_req, res) => {
   try {
     const data = await runSync(true);
