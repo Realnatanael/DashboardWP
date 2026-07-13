@@ -1,5 +1,8 @@
 # Aplicação que cria um dashboard usando a API do webposto 
 
+para rodar instale o node e dependencias npm 
+rode: npm run dev no terminal
+
 ## Fluxo de Dados (Passo a Passo)
 
 O fluxo de dados da aplicação, desde a API externa até a interface do usuário, segue as seguintes etapas:
