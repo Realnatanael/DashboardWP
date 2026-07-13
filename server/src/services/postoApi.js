@@ -1,3 +1,7 @@
+// Este arquivo contém funções para interagir com a API do Posto, buscando dados como empresas, vendas, tanques, estoque e desempenho.
+// Ele utiliza a função `apiGet` para fazer requisições GET à API, construindo os cabeçalhos de autenticação necessários com base nas configurações fornecidas.
+// As funções exportadas são usadas em outros módulos do servidor para obter dados atualizados do Posto e alimentar o dashboard da aplicação.
+// ===============================================================================================================================================================
 // Importa as configurações da aplicação, como URLs e credenciais da API.
 import { config } from '../config.js';
 
