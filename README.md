@@ -1,7 +1,6 @@
 # Aplicação que cria um dashboard usando a API do webposto 
 
-para rodar instale o node e dependencias npm 
-rode: npm run dev no terminal
+para rodar instale o node e dependencias com `npm run install:all` e, logo após, rode o servidor e aplicativo com `npm run dev no terminal`
 
 ## Fluxo de Dados (Passo a Passo)
 
