@@ -3,6 +3,7 @@
 # ===================================================================
 # Pastas de dependências, que são instaladas com 'npm install'
 /node_modules/
+*/node_modules/
 
 # Arquivos de log de debug gerados pelo npm
 npm-debug.log*
