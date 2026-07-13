@@ -3,7 +3,7 @@ import { getLastDashboard, runSync } from '../jobs/syncJob.js';
 import { Snapshot } from '../models/Snapshot.js';
 
 const router = Router();
-
+// Rota para obter os dados do dashboard. Retorna o último snapshot disponível.
 router.get('/', (_req, res) => {
   const data = getLastDashboard();
   if (!data) {
@@ -20,7 +20,7 @@ router.post('/sync', async (_req, res) => {
     res.status(500).json({ erro: err.message });
   }
 });
-
+// Rota para obter o histórico de snapshots do dashboard. Aceita um parâmetro de query `limite` para definir quantos registros retornar (máximo 100).
 router.get('/historico', async (req, res) => {
   const limite = Math.min(parseInt(req.query.limite || '24', 10), 100);
   const snaps = await Snapshot.find({ tipo: 'dashboard' })
@@ -35,7 +35,7 @@ router.get('/historico', async (req, res) => {
     lucro: s.dados?.financeiro?.lucroOperacional || 0,
   })));
 });
-
+// Rota de saúde do servidor. Retorna status "ok" e se há dados disponíveis. 
 router.get('/health', (_req, res) => {
   const data = getLastDashboard();
   res.json({

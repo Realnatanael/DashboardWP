@@ -1,5 +1,5 @@
 /**
- * @file Este é o arquivo principal do servidor (backend) da aplicação.
+ * Este é o arquivo principal do servidor (backend) da aplicação.
  *
  * Funções:
  * 1. Inicia um servidor web (usando Express) para receber requisições.
