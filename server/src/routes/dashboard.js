@@ -1,7 +1,11 @@
+// Este arquivo define as rotas relacionadas ao dashboard da aplicação. Ele utiliza o Express para criar endpoints que permitem obter dados do dashboard, forçar sincronizações e acessar o histórico de snapshots.
+// Importa o módulo `Router` do Express, que permite criar rotas de forma modular.
+// Importa funções específicas do módulo `syncJob.js`, que cuidam da sincronização dos dados do dashboard e da obtenção do último snapshot disponível.
+// Importa o modelo `Snapshot` do Mongoose, que representa os registros de snapshots armazenados no banco de dados MongoDB.
 import { Router } from 'express';
 import { getLastDashboard, runSync } from '../jobs/syncJob.js';
 import { Snapshot } from '../models/Snapshot.js';
-
+// Cria uma nova instância do roteador do Express. Todas as rotas relacionadas ao dashboard serão definidas neste objeto `router`.
 const router = Router();
 // Rota para obter os dados do dashboard. Retorna o último snapshot disponível.
 router.get('/', (_req, res) => {
@@ -27,7 +31,7 @@ router.get('/historico', async (req, res) => {
     .sort({ geradoEm: -1 })
     .limit(limite)
     .select('geradoEm dados.vendas.totalValor dados.vendas.totalVendas dados.financeiro.lucroOperacional');
-
+  // Retorna apenas os campos relevantes de cada snapshot, garantindo que a resposta seja leve e rápida. Cada snapshot é mapeado para um objeto contendo a data de geração e os valores agregados de vendas e lucro.
   res.json(snaps.map((s) => ({
     geradoEm: s.geradoEm,
     totalValor: s.dados?.vendas?.totalValor || 0,
@@ -44,5 +48,5 @@ router.get('/health', (_req, res) => {
     ultimaAtualizacao: data?.geradoEm || null,
   });
 });
-
+// Exporta o roteador para que ele possa ser usado em outros arquivos, como o arquivo principal do servidor (`index.js`).
 export default router;
