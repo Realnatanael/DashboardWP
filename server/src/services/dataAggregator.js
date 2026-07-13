@@ -1,3 +1,7 @@
+// Este arquivo contém funções que processam e agregam dados de várias fontes para criar um resumo útil para o dashboard. 
+// Ele recebe todos os dados brutos e desorganizados que vem da API através do postoApi.js e os transforma em informações que podem ser facilmente exibidas na interface do usuário.
+// =================================================================================================================================================================================
+
 // Esta é uma função "ajudante" genérica.
 // Pense nela como uma calculadora que soma valores específicos de uma lista.
 // items: A lista de coisas que queremos somar (ex: uma lista de vendas).
