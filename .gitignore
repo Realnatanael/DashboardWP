@@ -1,5 +1,42 @@
-node_modules/
-dist/
-.env
+# ===================================================================
+# Arquivos e pastas gerados pelo Node.js e gerenciadores de pacotes
+# ===================================================================
+# Pastas de dependências, que são instaladas com 'npm install'
+/node_modules/
+*/node_modules/
+
+# Arquivos de log de debug gerados pelo npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===================================================================
+# Arquivos de Build e Temporários
+# ===================================================================
+# Pasta de build do cliente (Vite)
+/client/dist
+
+# Pasta de cache do Vite
+.vite/
+.vite-temp/
+
+# Arquivos de log genéricos
 *.log
+
+# ===================================================================
+# Arquivos de Configuração de Ambiente
+# ===================================================================
+# Nunca envie arquivos .env para o repositório, pois eles contêm
+# chaves de API, senhas de banco de dados e outras informações sensíveis.
+.env
+.env.*
+!/.env.example
+
+# ===================================================================
+# Arquivos de Sistema Operacional e Editores de Código
+# ===================================================================
+# macOS
 .DS_Store
+
+# Windows
+Thumbs.db
